@@ -18,5 +18,5 @@ public class NodeTest extends Node {
 		n.prependToHead(7);
 		n.print(); // [7| ]->[0| ]->[2| ]->[3|/]
 	}
+
 }
-	
