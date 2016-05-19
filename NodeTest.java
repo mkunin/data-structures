@@ -16,7 +16,8 @@ public class NodeTest extends Node {
 		n.appendToTail(3);
 		n.remove(1);
 		n.prependToHead(7);
-		n.print(); // [7| ]->[0| ]->[2| ]->[3|/]
+		n.reverse();
+		n.print(); // [3| ]->[2| ]->[0| ]->[7|/]
 	}
 
 }
