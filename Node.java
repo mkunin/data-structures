@@ -7,11 +7,41 @@
 class Node {
 	Node next = null;
 	int data, size = 1;
-	String str = "";
+	String str = "", strWithCommas = "";
 	
 	public Node(int d) {
 		data = d;
 		str += String.valueOf(d);
+	}
+	
+	// Reverses a singly linked list.
+	void reverse() {
+		str = flip(str);
+		Node node = this;
+		Node temp = this;
+		while (temp.next != null) {
+			strWithCommas += temp.data + ",";
+			temp = temp.next;
+		}
+		strWithCommas += String.valueOf(temp.data);
+		strWithCommas = flip(strWithCommas);
+		String[] array = strWithCommas.split(",");
+		node.data = Integer.valueOf(array[0]);
+		node.next = null;
+		int tempSize = size;
+		size = 1;
+		for (int i = 1; i < tempSize; i++) {
+			node.appendToTail(Integer.valueOf(array[i]));
+		}
+	}
+	
+	// Reverses a string.
+	String flip(String s) {
+		String acc = "";
+		for (int i = s.length(); i > 0; i--) {
+			acc += s.charAt(i-1);
+		}
+		return acc;
 	}
 	
 	// Appends a node to the tail of a singly linked list.
