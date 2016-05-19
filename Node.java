@@ -7,7 +7,7 @@
 class Node {
 	Node next = null;
 	int data, size = 1;
-	String str = "", strWithCommas = "";
+	String str = "";
 	
 	public Node(int d) {
 		data = d;
@@ -19,6 +19,7 @@ class Node {
 		str = flip(str);
 		Node node = this;
 		Node temp = this;
+		String strWithCommas = "";
 		while (temp.next != null) {
 			strWithCommas += temp.data + ",";
 			temp = temp.next;
