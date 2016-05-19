@@ -4,7 +4,7 @@
  * This class implements a singly linked list from scratch.
  */
 
-public class Node {
+class Node {
 	Node next = null;
 	int data, size = 1;
 	String str = "";
@@ -76,4 +76,5 @@ public class Node {
 			node = node.next;
 		}
 	}
+
 }
