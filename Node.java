@@ -14,40 +14,15 @@ class Node {
 	
 	// Reverses a singly linked list.
 	void reverse() {
-		Node node = this;
-		Node temp = this;
-		String strWithCommas = "";
-		while (temp.next != null) {
-			strWithCommas += temp.data + ",";
-			temp = temp.next;
+		Node n = this;
+		Node n2 = this;
+		Node reversedList = new Node(n.data);
+		while (n2.next != null) {
+			reversedList.prependToHead(n2.next.data);
+			n2 = n2.next;
 		}
-		strWithCommas += String.valueOf(temp.data);
-		strWithCommas = flip(strWithCommas);
-		String[] array = strWithCommas.split(",");
-		flipNumsIn(array);
-		node.data = Integer.valueOf(array[0]);
-		node.next = null;
-		int tempSize = size;
-		size = 1;
-		for (int i = 1; i < tempSize; i++) {
-			node.appendToTail(Integer.valueOf(array[i]));
-		}
-	}
-	
-	// Applies flip(String s) to each item in array.
-	void flipNumsIn (String[] array) {
-		for (int i = 0; i < array.length; i++) {
-			array[i] = flip(array[i]);
-		}
-	}
-	
-	// Reverses a string.
-	String flip(String s) {
-		String acc = "";
-		for (int i = s.length(); i > 0; i--) {
-			acc += s.charAt(i-1);
-		}
-		return acc;
+		n.data = reversedList.data;
+		n.next = reversedList.next;
 	}
 	
 	// Appends a node to the tail of a singly linked list.
@@ -62,21 +37,13 @@ class Node {
 	
 	// Prepends a node to the head of a singly linked list.
 	void prependToHead(int d) {
-		Node node = this;
-		Node temp = this;
-		String strWithCommas = "";
-		while (temp.next != null) {
-			strWithCommas += temp.data + ",";
-			temp = temp.next;
-		}
-		strWithCommas += String.valueOf(temp.data);
-		String[] array = strWithCommas.split(",");
-		node.next = null;
-		node.data = d;
-		size = 1;
-		for (int i = 0; i < array.length; i++) { /* Appends n nodes to the tail of a singly linked list. */
-			node.appendToTail(Integer.parseInt(array[i]));
-		}
+		Node first = this;
+		Node second = Node.this.next;
+		first.next = new Node(d);
+		first.next.data = first.data;
+		first.data = d;
+		first.next.next = second;
+		size++;
 	}
 	
 	// Removes a node from a singly linked list.
