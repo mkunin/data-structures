@@ -24,7 +24,7 @@ class Stack {
 		}
 	}
 	
-	// Removes a node from the head of a queue.
+	// Removes a node from the head of a stack.
 	void pop() {
 		if (first != null) {
 			first = first.next;
