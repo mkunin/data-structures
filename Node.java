@@ -29,19 +29,15 @@ class Node {
 	boolean hasCycle() {
 		Node fastPointer = this;
 		Node slowPointer = this;
-		boolean pointersNotNull = fastPointer != null
-									&& fastPointer.next != null
-									&& slowPointer != null;
+		boolean pointersNotNull = fastPointer != null && fastPointer.next != null && slowPointer != null;
 		while (pointersNotNull) {
 			fastPointer = fastPointer.next.next;
 			slowPointer = slowPointer.next;
 			if (fastPointer == slowPointer) return true;
-			pointersNotNull = fastPointer != null
-								&& fastPointer.next != null
-								&& slowPointer != null;
+			pointersNotNull = fastPointer != null && fastPointer.next != null && slowPointer != null;
 		}
 		return false;
-	}   
+	}
 	
 	// Appends a node to the tail of a singly linked list.
 	void appendToTail(int d) {
