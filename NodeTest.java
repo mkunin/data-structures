@@ -18,6 +18,9 @@ public class NodeTest extends Node {
 		n.prependToHead(7);
 		n.reverse();
 		n.print(); // [3| ]->[2| ]->[0| ]->[7|/]
+		System.out.println("\n" + n.hasCycle()); // false
+		n.next.next.next.next = n.next; // Creates a cycle, or loop.
+		System.out.println(n.hasCycle()); // true
 	}
 
 }
