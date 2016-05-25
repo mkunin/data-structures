@@ -29,12 +29,12 @@ class Node {
 	boolean hasCycle() {
 		Node fast = this;
 		Node slow = this;
-		boolean pointersNotNull = fast != null && fast.next != null && slow != null;
-		while (pointersNotNull) {
+		boolean notNull = fast != null && fast.next != null && slow != null;
+		while (notNull) {
 			fast = fast.next.next;
 			slow = slow.next;
 			if (fast == slow) return true;
-			pointersNotNull = fast != null && fast.next != null && slow != null;
+			notNull = fast != null && fast.next != null && slow != null;
 		}
 		return false;
 	}
