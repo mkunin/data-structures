@@ -1,11 +1,10 @@
 /*
  * File: BinarySearchTree.java
- * -----------------------------
+ * ---------------------------
  * This class implements a Binary Search Tree (BST) from scratch.
  */
 
 class BinarySearchTree {
-
 	BinarySearchTree left = null, right = null;
 	int data;
 
