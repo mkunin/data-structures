@@ -27,14 +27,14 @@ class Node {
 	
 	// Detects if there exists a cycle, or loop, in a singly linked list.
 	boolean hasCycle() {
-		Node fastPointer = this;
-		Node slowPointer = this;
-		boolean pointersNotNull = fastPointer != null && fastPointer.next != null && slowPointer != null;
+		Node fast = this;
+		Node slow = this;
+		boolean pointersNotNull = fast != null && fast.next != null && slow != null;
 		while (pointersNotNull) {
-			fastPointer = fastPointer.next.next;
-			slowPointer = slowPointer.next;
-			if (fastPointer == slowPointer) return true;
-			pointersNotNull = fastPointer != null && fastPointer.next != null && slowPointer != null;
+			fast = fast.next.next;
+			slow = slow.next;
+			if (fast == slow) return true;
+			pointersNotNull = fast != null && fast.next != null && slow != null;
 		}
 		return false;
 	}
