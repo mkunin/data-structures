@@ -1,6 +1,6 @@
 /*
  *  File: BinarySearchTreeTest.java
- *  -------------------------
+ *  -------------------------------
  *  Output:
  *  Pre-order Traversal: {33, 21, 12, 37, 99}
  *  In-order Traversal: {12, 21, 33, 37, 99}
