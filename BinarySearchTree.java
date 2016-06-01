@@ -53,6 +53,16 @@ class BinarySearchTree {
 		}
 		return found;
 	}
+	
+	// Inverts a Binary Search Tree.
+	static void invert(BinarySearchTree tree) {
+		if (tree == null) return;
+		BinarySearchTree temp = tree.right;
+		tree.right = tree.left;
+		tree.left = temp;
+		invert(tree.left);
+		invert(tree.right);
+	}
 
 	// Pre-order, In-order, and Post-order traversals.
 	static void traverse(BinarySearchTree tree) {
